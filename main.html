@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <title>Jeju ICC</title>
+
+        <!-- Required Stylesheets -->
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+
+
+        <!--<link rel="stylesheet" href="./static/css/jquery-confirm.min.css?v=1">-->
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuejs-dialog@1.4.1/dist/vuejs-dialog.min.css">-->
+        <!--<link rel="stylesheet" href="./static/css/bootstrap.min_new.css?v=1">-->
+        <link rel="stylesheet" href="./static/css/shopping_common.css?v=1">
+        <link rel="stylesheet" href="./static/css/shopping_main.css?v=1">
+
+
+        <!-- Load polyfills to support older browsers -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuejs-dialog@1.4.1/dist/vuejs-dialog.min.css"><!-- comment -->
+        
+        
+        <!-- Required scripts -->
+        <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
+        <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
+
+        <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+        <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src='https://cdn.polyfill.io/v2/polyfill.min.js'></script>
+        <!-- inowing -->
+        <!-- Quill JS Vue -->
+
+        <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.3/xlsx.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vuejs-dialog@1.4.2/dist/vuejs-dialog.min.js"></script>
+        <script assync src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+
+        <!-- Include stylesheet -->
+        <!--        <link href="https://cdn.quilljs.com/1.3.4/quill.core.css" rel="stylesheet">
+                <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
+                <link href="https://cdn.quilljs.com/1.3.4/quill.bubble.css" rel="stylesheet">-->
+
+
+
+    </head>
+
+    <body>
+        <div id="app">
+
+            <header class="ino-gradiant">
+                <div class="px-3 py-2"><shop_navi></shop_navi></div>
+            </header>
+
+
+            <content>
+                <div class="main ">
+
+                    <router-view></router-view>
+                </div>
+            </content>
+
+
+            <shop_footer></shop_footer>
+
+        </div>
+
+        <script type="module">
+
+            import { store } from './store.js';
+
+//            window.Vue.use(VuejsDialog.main.default)
+//            Vue.component('https://cdn.jsdelivr.net/npm/vue-confirm@1.2.1/index.min.js', VueConfirmDialog.default)
+            //		import InowingPlugin from './InowingPlugin.js'
+
+            Vue.use(httpVueLoader);
+            //            Vue.use(VueQuillEditor);
+            //		Vue.use(InowingPlugin);
+
+            // Vue.mixin({
+            // 	data: function () {
+            // 		return {
+            // 			get event_id() {
+            // 				return "106";
+            // 			}
+            // 		}
+            // 	}
+            // });
+            const routes = [];
+            const router = new VueRouter({routes: routes});
+//            Vue.use(VueConfirmDialog)
+            window.Vue.use(VuejsDialog.main.default)
+            window.EventBus = new Vue();
+            window.app = new Vue({
+                el: '#app',
+                mode: 'history',
+                store: store,
+                components: {
+                    'vuejs-dialog': VuejsDialog.main.default,
+                    siteinfo: window.httpVueLoader(`./site_info.vue`),
+                    shop_navi: window.httpVueLoader(`./shop_navi.vue`),
+                    shop_footer: window.httpVueLoader(`./shop_footer.vue`)
+                },
+                router: router,
+                data: function () {
+                    return {
+
+                    }
+                },
+                mounted: function () {
+                    this.$nextTick(function () {
+
+
+                        //                        router.addRoute({path: '/', component: window.httpVueLoader('./site_info.vue')});
+                        router.addRoute({path: '/order_result_page', component: window.httpVueLoader('./order_result_page.vue')});
+                        router.addRoute({path: '/product_list', component: window.httpVueLoader('./product_list.vue')});
+                        router.addRoute({path: '/product_detail', component: window.httpVueLoader('./product_detail.vue')});
+                        router.addRoute({path: '/basket', component: window.httpVueLoader('./basket.vue')});
+                        router.addRoute({path: '/order', component: window.httpVueLoader('./order.vue')});
+                        router.addRoute({path: '/order_result_page', component: window.httpVueLoader('./order_result_page.vue')});
+
+
+                    })
+                },
+                created: function () {
+
+                },
+
+                methods: {
+
+                }
+            })
+
+
+            Vue.filter('toCurrency', function (value) {
+                if (typeof value !== "number") {
+                    return value;
+                }
+                var formatter = new Intl.NumberFormat('en-US', {
+//                    style: 'currency',
+                    currency: 'KRW',
+                    minimumFractionDigits: 0,
+                });
+                return formatter.format(value);
+            });
+
+        </script>
+        <style scoped>
+            /* html, body, #app */
+            body {
+                width: calc(100%);
+                height: 100%;
+                overflow-x:hidden;
+            }
+            #app {
+                width: calc(100%);
+                height: 100%;
+
+            }
+
+            #app>header {
+                background-color: #3285cf;
+                width: 100%;
+                height: 38px;
+            }
+
+            main {
+                width: 100%;
+                min-height: calc(100vh - 38px);
+                display: flex;
+                flex-direction: row;
+                flex-wrap: flex-start;
+            }
+
+            /* main 내부 */
+            main>nav {
+                width: 15%;
+                background-color: #17a2b8;
+            }
+
+            main>article {
+                width: 100%;
+                min-height: calc(100vh - 38px);
+                padding: 1em;
+            }
+
+            /* navi css */
+            nav a {
+                text-decoration: none; color: inherit;
+                padding: 0px;
+            }
+            nav span {
+                font-size: 12pt;
+            }
+
+
+            /* 기타 */
+            .inoBtn-150 {
+                width: 150px;
+            }
+
+            thead {
+                text-align: center;
+            }
+
+            .ino-gradiant {
+                background: linear-gradient(96deg, #79cab5, #eae4c6);
+                /* background: linear-gradient(96deg, #dac1d6, #007ef9); */
+                background-size: 400% 400%;
+
+                -webkit-animation: AnimationName 15s ease infinite;
+                -moz-animation: AnimationName 15s ease infinite;
+                animation: AnimationName 15s ease infinite;
+            }
+
+            .ino-1000-300-wrap {
+                height:105px;
+                margin:0px auto; 
+            }
+            .ino-180-70-wrap > div, .ino-250-420-wrap > div, .ino-290-200-wrap > div, .ino-450-260-wrap > div, .ino-180-180-wrap > div, .ino-1000-300-wrap > div, .ino-1000-1400-wrap > div, .ino-800-450-wrap > div {
+                display:inline-block; width:100%; height: 100%; padding: 5px; border:1px solid silver; border-radius: 3px;
+
+            }
+            .ino-180-70-wrap > div > img, .ino-250-420-wrap > div > img, .ino-290-200-wrap > div > img, .ino-450-260-wrap > div > img, .ino-180-180-wrap > div > img, .ino-1000-300-wrap > div > img, .ino-1000-1400-wrap > div > img, .ino-800-450-wrap > div > img {
+                height:100%; width:100%; object-fit:contain;
+            }
+
+            .ino-1000-1400-wrap {
+                height:350px; width:250px;
+                margin:0px auto; 
+            }
+
+            .ino-800-450-wrap {
+                width:368px; height:207px; 
+                margin:0px auto; 
+            }
+
+            .ino-180-180-wrap {
+                width:180px; height:180px; 
+                margin:0px auto; 
+                /* //p.card-text.ino-180-180-wrap */
+            }
+
+            .ino-450-260-wrap {
+                width:315px; height:182px; 
+                margin:0px auto; 
+            }
+
+            .ino-290-200-wrap {
+                width:290px; height:200px; 
+                margin:0px auto; 
+            }
+
+            .ino-250-420-wrap {
+                width:250px; height:420px; 
+                margin:0px auto; 
+            }
+            .ino-180-70-wrap {
+                width:180px; height:70px; 
+                margin:0px auto; 
+            }
+
+            @-webkit-keyframes AnimationName {
+                0%{background-position:97% 0%}
+                50%{background-position:4% 100%}
+                100%{background-position:97% 0%}
+            }
+            @-moz-keyframes AnimationName {
+                0%{background-position:97% 0%}
+                50%{background-position:4% 100%}
+                100%{background-position:97% 0%}
+            }
+            @keyframes AnimationName {
+                0%{background-position:97% 0%}
+                50%{background-position:4% 100%}
+                100%{background-position:97% 0%}
+            }
+        </style>
+
+    </body>
+
+</html>

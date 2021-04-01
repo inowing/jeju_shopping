@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Shopping</title>
+        <link rel="stylesheet" href="./static/css/jquery-confirm.min.css?v=1">
+        <!--<link rel="stylesheet" href="./static/css/bootstrap.min_new.css?v=1">-->
+        <link rel="stylesheet" href="./static/css/shopping_common.css?v=1">
+        <link rel="stylesheet" href="./static/css/shopping_main.css?v=1">
+    </head>
+
+    <body>
+
+        <div class="wrap container">
+            <div class="top_wrap js-top_wrap">
+                <div class="top_pc">
+                    <header class="dis-table pc-w header header-pc" id="header"><div class="vm">
+                            <a href="http://14.63.172.119/data/uploaded/events-file_1-106.pdf?v=1616035224" target="_blank" id="is_visible_file_1" style="display: block;">
+                                <img id="file_button_1" src="http://14.63.172.119/data/uploaded/events-file_button_1-106.png?v=1615882400" alt="">
+                            </a>
+                            <a href="http://14.63.172.119/data/uploaded/events-file_2-106.jpeg?v=1615873937" target="_blank" id="is_visible_file_2" style="display: block;">
+                                <img id="file_button_2" src="http://14.63.172.119/data/uploaded/events-file_button_2-106.png?v=1615882400" alt="">
+                            </a>
+                        </div>
+                        <div class="vm">
+                            <a href="./overview.html?menu_id=17"><img id="logo" src="http://14.63.172.119/data/uploaded/events-logo-106.jpeg?v=1615699387" alt=""></a>
+                        </div>
+                        <div class="vm">
+                            <select class="language" id="is_language" style="display: inline-block;">
+                                <option value="0">한국어</option></select>
+                            <div class="pc-login_wrap" id="is_login" style="visibility: hidden;">
+                                <a href="./login.html" class="a"><span>로그인</span></a> |
+                                <a href="./join.html" class="a"><span>회원가입</span></a>
+                            </div>
+                            <div class="sns_wrap">
+                                <a id="is_visible_sns_banner_1" class="is_visible_sns_banner_1_en" href="http://instagram.com/jejueatsuda" target="_blank" style="display: block;">
+                                    <span><img id="sns_banner_1" src="http://14.63.172.119/data/uploaded/events-sns_banner_1-106.png?v=1615700618"></span>
+                                </a>
+                                <a id="is_visible_sns_banner_2" class="is_visible_sns_banner_2_en" href="http://facebook.com" target="_blank" style="display: block;">
+                                    <span><img id="sns_banner_2" src="http://14.63.172.119/data/uploaded/events-sns_banner_2-106.png?v=1615700618"></span>
+                                </a>
+                                <a id="is_visible_sns_banner_3" class="is_visible_sns_banner_3_en" href="http://naver.com" target="_blank" style="display: block;">
+                                    <span><img id="sns_banner_3" src="http://14.63.172.119/data/uploaded/events-sns_banner_3-106.png?v=1615700618"></span>
+                                </a>
+                            </div>
+                        </div></header>
+                    <nav class="nav nav-pc txt-c set_bg" style="background-color: rgb(44, 80, 156); color: rgb(255, 255, 255);">
+                        <div class="pc-w dis-table nav-pc_content" id="nav"><a href="./overview.html?menu_id=17" class="set_hover_bg" data-name="HOME" data-id="17" style="background-color: rgb(44, 80, 156); color: rgb(255, 255, 255);"><span>HOME</span></a><a href="./overview_a.html?menu_id=18" class="set_hover_bg" data-name="박람회" 소개="" data-id="18" style="background-color: rgb(44, 80, 156); color: rgb(255, 255, 255);"><span>박람회 소개</span></a><div class="set_hover_bg" data-id="20" style="background-color: rgb(44, 80, 156); color: rgb(255, 255, 255);">
+                                <span>오프닝 세션</span>
+                                <div class="sub_menu" style="background-color: rgb(255, 255, 255); color: rgb(5, 5, 5);"><a href="./movie.html?menu_id=20&amp;category_id=64" data-name="환 영 사" data-id="20" data-category="64"><span>환 영 사</span></a><a href="./movie.html?menu_id=20&amp;category_id=65" data-name="축 사" data-id="20" data-category="65"><span>축 사</span></a></div></div><div class="set_hover_bg active" data-id="32" style="background-color: rgb(235, 97, 60); color: rgb(255, 255, 255);">
+                                <span>온라인 전시관</span>
+                                <div class="sub_menu" style="background-color: rgb(255, 255, 255); color: rgb(5, 5, 5);"><a href="./exhibition.html?menu_id=32&amp;category_id=0" data-name="전체" data-id="32" data-category="0" class="active"><span>전체</span></a><a href="./exhibition.html?menu_id=32&amp;category_id=78" data-name="농,축,수산물" data-id="32" data-category="78"><span>농,축,수산물</span></a><a href="./exhibition.html?menu_id=32&amp;category_id=79" data-name="과일/견과" data-id="32" data-category="79"><span>과일/견과</span></a><a href="./exhibition.html?menu_id=32&amp;category_id=80" data-name="음료/주류" data-id="32" data-category="80"><span>음료/주류</span></a><a href="./exhibition.html?menu_id=32&amp;category_id=81" data-name="스낵류" data-id="32" data-category="81"><span>스낵류</span></a><a href="./exhibition.html?menu_id=32&amp;category_id=82" data-name="유제품" data-id="32" data-category="82"><span>유제품</span></a><a href="./exhibition.html?menu_id=32&amp;category_id=83" data-name="식당/카페/베이커리" data-id="32" data-category="83"><span>식당/카페/베이커리</span></a><a href="./exhibition.html?menu_id=32&amp;category_id=84" data-name="기기/패킹/기타" data-id="32" data-category="84"><span>기기/패킹/기타</span></a></div></div><div class="set_hover_bg" data-id="21" style="background-color: rgb(44, 80, 156); color: rgb(255, 255, 255);">
+                                <span>공지 및 이벤트</span>
+                                <div class="sub_menu" style="background-color: rgb(255, 255, 255); color: rgb(5, 5, 5);"><a href="./notice.html?menu_id=21&amp;category_id=69" data-name="2021 제주잇수다! 공지게시판" data-id="21" data-category="69" style="background-color: rgb(255, 255, 255); color: rgb(5, 5, 5);"><span>2021 제주잇수다! 공지게시판</span></a></div></div></div>
+                    </nav>
+                </div>
+                <div class="top_m js-top_m">
+                    <div class="top_m_bg">
+                        <header class="dis-table header header-m" id="mo_header">
+                            <div class="nav_icon js-nav_icon">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="logo_wrap check_hide">
+                                <img id="mo_logo" src="http://14.63.172.119/data/uploaded/events-logo-106.jpeg?v=1615699387" alt="">
+                            </div>
+                            <div class="m-login_wrap" id="mo_is_login" style="display: none;">
+                                <a href="#"><span data-lang="navigation.login">로그인</span></a>
+                                <a href="#"><span data-lang="navigation.join">회원가입</span></a>
+                            </div>
+                            <nav class="nav nav-m">
+                                <div class="nav_cnt">
+                                    <div class="dis-table nav_title">
+                                        <span data-lang="navigation.cat">카테고리</span>
+                                        <div class="txt-r">
+                                            <select id="mo_is_language">
+                                                <option value="0">한국어</option></select>
+                                        </div>
+                                    </div>
+                                    <div class="nav_content menu_nav">
+                                    </div>
+                                </div>
+                                <hr class="hr-nav">
+                                <div class="nav_cnt">
+                                    <div class="dis-table nav_title">
+                                        <span data-lang="navigation.etc_menu">기타</span>
+                                        <div class="txt-r sns_wrap">
+                                            <a id="mo_is_visible_sns_banner_1" href="http://instagram.com/jejueatsuda" target="_blank" style="display: block;">
+                                                <span><img id="mo_sns_banner_1" src="http://14.63.172.119/data/uploaded/events-sns_banner_1-106.png?v=1615700618"></span>
+                                            </a>
+                                            <a id="mo_is_visible_sns_banner_2" href="http://facebook.com" target="_blank" style="display: block;">
+                                                <span><img id="mo_sns_banner_2" src="http://14.63.172.119/data/uploaded/events-sns_banner_2-106.png?v=1615700618"></span>
+                                            </a>
+                                            <a id="mo_is_visible_sns_banner_3" href="http://naver.com" style="display: block;">
+                                                <span><img id="mo_sns_banner_3" src="http://14.63.172.119/data/uploaded/events-sns_banner_3-106.png?v=1615700618"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="nav_content">
+                                        <label class="l_menu"><a id="mo_is_visible_file_1" href="http://14.63.172.119/data/uploaded/events-file_1-106.pdf?v=1616035224" style="display: block;"><span>부스배치도</span></a></label>
+                                        <label class="l_menu"><a id="mo_is_visible_file_2" href="http://14.63.172.119/data/uploaded/events-file_2-106.jpeg?v=1615873937" style="display: block;"><span>행사브로슈어</span></a></label>
+                                    </div>
+                                </div>
+                            </nav>
+                        </header>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap_flex_main js-main pc-w-mini" style="padding-top: 185px;">
+                <main class="main ">
+
+                    <div class="alert_cont">
+                        *주문하신 상품 및 배송관련 문의는 판매자에 직접 해주세요.
+                        *본 사이트에서 판매되는 상품의 품질 및 배송 등은 이벤트 준비/운영사무국과는 관계가 없음을 알려드립니다. 또한, 주문하신 상품은 이벤트사이트 운영 기간 전후로 한시적으로 판매되는 것으로 상품의 품질 및 배송관련 발생할 수 있는 각종 분쟁관련 사항은 오로지 판매자와 구매자사이에서 해결해야합니다.
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                    <div class="poduct_detail_delimeter"></div>
+
+                    <div class="product_detail_desc_cont">
+                        <div class="product_detail_desc">
+                            <div class="product_detal_container_main ">
+                            </div>
+<!--                            <div class="order_block">
+
+                                <div class="shopping_delimeter_order"></div>
+                                <div class="bayer_information_block"> 
+                                    <div class="row">
+                                        <div class="shopping_title shopping_title_order">
+                                            주문자정보 
+                                        </div>
+                                    </div>  
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-xs-3 col-form-label order_label">*이름</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" 
+                                                   class="form-control" 
+                                                   id="inputEmail3" 
+                                                   name="receiver_name_original" 
+                                                   data-parsley-trigger="focusout"
+                                                   placeholder="" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="phone_original" class="col-xs-3 col-form-label order_label">*휴대폰</label>
+                                                                <div class="col-xs-9">
+                                                                    <input type="text" class="form-control" disabled="disabled" id="inputPassword3" name="receiver_phone_original" placeholder="" value="{{{Auth::user()->receiver_phone}}}">
+                                                                </div>
+
+                                        <div class="col-xs-9">
+                                            <input type="number"
+                                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   maxlength = "3"
+                                                   class="form-control receiver_phone receiver_phone_original_1" id="phone_original" placeholder="" value="" name="receiver_phone_original_1">
+                                            <div class="phone_delimeter">-</div>
+                                            <input type="number"
+                                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   maxlength = "4"
+                                                   class="form-control receiver_phone receiver_phone_original_2" id="" placeholder="" value="" name="receiver_phone_original_2">
+                                            <div class="phone_delimeter">-</div>
+                                            <input type="number"
+                                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                   class="form-control receiver_phone receiver_phone_original_3" id="" placeholder="" value="" name="receiver_phone_original_3">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-xs-3 col-form-label order_label">이메일</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control"  id="inputPassword3" placeholder="" value="">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="shipping_information_block"> 
+
+                                    <div class="row">
+                                    <div class="shopping_title shopping_title_order">
+                                        배송지 정보 
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-check copy_user_data_form_check">
+                                    <label>
+                                        <input type="checkbox" name="check" checked="" class="copy_user_data"><span class="label-text needsclick">주문자 정보와 동일</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="description" class="col-xs-3 col-form-label order_label">*이 름</label>
+                                    <div class="col-xs-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+
+
+                                    <label for="inputPassword3" class="col-xs-3 col-form-label order_label">*휴대폰</label>
+                                    <div class="col-xs-9">
+                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="3" minlength="3" required="" class="form-control receiver_phone receiver_phone_1" id="inputPassword3" placeholder="" value="" name="receiver_phone_1"><div class="phone_delimeter">-</div>
+                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" minlength="4" required="" class="form-control receiver_phone receiver_phone_2" id="" placeholder="" value="" name="receiver_phone_2"><div class="phone_delimeter">-</div>
+                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" minlength="4" required="" class="form-control receiver_phone receiver_phone_3" id="" placeholder="" value=""  name="receiver_phone_3">
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 col-md-12" style="position: relative;">
+                                    <div class="row">
+                                        <div id="address_search" style="display:none;border:1px solid;width:100%;min-height:500px;margin:5px 0;position:relative">
+                                            <a href="#"  class="address_search_close" style="position: absolute;cursor:pointer;right:0;top:-1px;z-index:10000" ><img src="./static/images/close.png"  alt="접기 버튼"></a>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-xs-3 col-form-label order_label">배송지</label>
+                                    <div class="col-xs-9">
+
+                                        <ul class="receiver_address_ul">
+
+                                            <li class="receiver_address_li">
+
+                                                <input type="text" class="form-control post_code" disabled="" id="" placeholder="" required="" value="" name="post_code"><span class="btn btn-default search_address">주소검색</span> 
+                                            </li>
+                                            <li class="receiver_address_li">
+                                                <input type="text" class="form-control" id="" disabled="" placeholder="" required="" value="" name="address">
+                                            </li>
+                                            <li class="receiver_address_li">
+                                                <input type="text" class="form-control" id="" placeholder="상세 주소를 입력하세요" required="" value="" name="address_detail">
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <label for="description" class="col-xs-3 col-form-label order_label">*배송<br>요청사항</label>
+                                    <div class="col-xs-9">
+                                        <textarea name="description" class="form-control description" id="description" placeholder=""></textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>-->
+                        </div>
+
+
+
+                        <!--                        <div class="product_detail_desc">
+                                                    <img src="" alt="" class="desc_img">
+                                                </div>-->
+                        <div class="product_detail_control">
+                            <!--<div class="detail_cont_title">수량</div>-->
+
+
+                            <div class="deliverry_total_price_cont">총 상품금액 <span class="total_price"></span></div>
+                            <div class="deliverry_total_price_cont">배송비 <span class="delivery_price"></span></div>
+                            <div class="poduct_detail_delimeter"></div>
+                            <div class="deliverry_total_price_cont">전체주문금액 <span class="total_price_with_delivery"></span></div>
+                            <div class="clearfix"></div>
+                            <div class="shop_btn_control_panel">
+                                <span class="my_btn btn-primary make_order go_to_order_page">결제하기</span>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                </main>
+                <hr class="hr m_only">
+                <section class="font0 txt-c fb_wrap js-fb_wrap" id="banner">
+                    <a id="banner_photo_1_link" href="http://naver.com" target="_blank">
+                        <img id="banner_photo_1" src="http://14.63.172.119/data/uploaded/events-banner_photo_1-106.png?v=1615711920" alt="">
+                    </a>
+                    <a id="banner_photo_2_link" href="http://google.com" target="_blank">
+                        <img id="banner_photo_2" src="http://14.63.172.119/data/uploaded/events-banner_photo_2-106.png?v=1615711920" alt="">
+                    </a>
+                </section>
+            </div>
+            <section class="bottom_bg" id="bottom_banner">
+                <div class="pc-w bottom_wrap">
+                    <div class="bottom_banner_wrap">
+                        <div class="js-bot_bx" style="text-align: center;"><div class="bxslider-inner">
+                                <div>
+                                    <a href="http://iccjeju.co.kr" target="_blank">
+                                        <img src="http://14.63.172.119" alt="">
+                                    </a>
+                                </div>
+                            </div></div>
+                    </div>
+                    <div class="family_wrap txt-r" id="is_visible_familysite" style="display: table-cell;">
+                        <select class="select-family" onchange="if (this.value)
+                                    window.open(this.value);"><option value="">패밀리사이트</option><option value="http://jeju.go.kr">제주도청</option><option value="http://iccjeju.co.kr">제주국제컨벤션센터</option></select>
+                    </div>
+                </div>
+            </section>
+            <section class="bottom_bg" >
+                <footer class="footer m0" id="footer"><div class="pc-w" id="copyright"><p>[63547] 제주특별자치도 서귀포시 중문관광로 224(중문동) ICCJEJU 대표이사 김의근 | 제주본사.064)735-1000 서울사무소.02)775-1091~3 사업자번호. 616-81-20339 </p><p>ⓒ INTERNATIONAL CONVENTION CENTER JEJU CO., LTD..ALL RIGHTS RESERVED</p></div></footer>
+
+            </section>
+        </div>
+
+
+        <script src="./static/lib/jquery-1.12.4.min.js"></script>
+        <script src="./static/lib/jquery-confirm.min.js"></script>
+        <script assync src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+        <script src="./static/js/basket.js"></script>
+    </body>
+</html>
